@@ -9,7 +9,7 @@ import {
 import pc from 'picocolors';
 import { spawn } from 'node:child_process';
 import { downloadExtract, getLatestTagName } from './utils.mjs';
-
+import pkg from '../package.json'
 
 console.log(`
  _  _  ____  _  _  ____  ____  _____  ___ 
@@ -17,7 +17,7 @@ console.log(`
  )  (  )__)  )  (   )(   )(_) ))(_)(( (__ 
 (_)\\_)(____)(_/\\_) (__) (____/(_____)\\___)
 
-v 0.1.0
+v ${pkg.version}
 `)
 
 intro(pc.bgCyan(pc.bold(` Create NextDoc `)));
