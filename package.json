@@ -1,0 +1,30 @@
+{
+  "name": "create-next-doc",
+  "version": "0.0.1",
+  "description": "next doc installer",
+  "bin": {
+    "create-next-doc": "bin/install.mjs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juji/create-next-doc.git"
+  },
+  "keywords": [
+    "nextjs",
+    "nextui",
+    "docs"
+  ],
+  "author": "jujiyangasli@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/juji/create-next-doc/issues"
+  },
+  "homepage": "https://github.com/juji/create-next-doc#readme",
+  "dependencies": {
+    "@clack/prompts": "^0.7.0",
+    "picocolors": "^1.0.1"
+  }
+}
