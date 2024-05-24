@@ -7,9 +7,8 @@ import {
   text 
 } from '@clack/prompts';
 import pc from 'picocolors';
-import download from 'download';
-import renameOverwrite from 'rename-overwrite'
 import { spawn } from 'node:child_process';
+import { downloadExtract, getLatestTagName } from './utils.mjs';
 
 
 console.log(`
@@ -54,15 +53,16 @@ if(isCancel(pkgm)){
 
 const s = spinner();
 s.start('Downloading..');
-await download(
-  'https://github.com/juji/next-doc/archive/refs/tags/latest.tar.gz', 
-  '.',
-  {
-    extract: true
-  }
-);
 
-await renameOverwrite('next-doc-latest', dir)
+const tagname = await getLatestTagName(
+  'https://api.github.com/repos/juji/next-doc/releases/latest'
+)
+
+await downloadExtract(
+  `https://github.com/juji/next-doc/archive/refs/tags/${tagname}.tar.gz`,
+  `next-doc-${tagname}`,
+  dir
+)
 
 s.stop('Package downloaded');
 
@@ -88,20 +88,20 @@ if(pkgm !== '_'){
 
     sp.on('close', (code) => {
       if(code) {
-        console.error(`process exited with code ${code}`)
+        console.error(`ERROR: process exited with code ${code}`)
         j(false)
       } else r(true)
     })
 
   })
 
-  console.log('')
-  console.log('Happy Documenting!')
-  console.log('')
-
 }else{
   outro('Done')
 }
+
+console.log('')
+console.log('Happy Documenting!')
+console.log('')
 
 
 

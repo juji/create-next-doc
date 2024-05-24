@@ -1,6 +1,6 @@
 {
   "name": "create-next-doc",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "next doc installer",
   "bin": {
     "create-next-doc": "bin/install.mjs"
@@ -25,8 +25,7 @@
   "homepage": "https://github.com/juji/create-next-doc#readme",
   "dependencies": {
     "@clack/prompts": "^0.7.0",
-    "download": "^8.0.0",
     "picocolors": "^1.0.1",
-    "rename-overwrite": "^5.0.0"
+    "tar": "^7.1.0"
   }
 }
