@@ -82,9 +82,13 @@ if(pkgm !== '_'){
 
   await new Promise((r,j) => {
 
-    const sp = spawn(command[pkgm][0], [command[pkgm][1]]|| [], {
-      stdio: "inherit"
-    })
+    const sp = spawn(
+      command[pkgm][0], 
+      command[pkgm][1] ? [command[pkgm][1]] : [], 
+      {
+        stdio: "inherit"
+      }
+    )
 
     sp.on('close', (code) => {
       if(code) {
