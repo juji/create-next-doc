@@ -38,8 +38,8 @@ if(isCancel(dir)){
 const pkgm = await select({
   message: 'Which pkg manager do you use?',
   options: [
+    { value: 'pnpm', label: 'pnpm (recommended)' },
     { value: 'npm', label: 'npm' },
-    { value: 'pnpm', label: 'pnpm' },
     { value: 'bun', label: 'bun' },
     { value: 'yarn', label: 'yarn' },
     { value: '_', label: '[I\'ll do the install on my own]' },
