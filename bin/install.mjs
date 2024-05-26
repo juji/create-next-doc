@@ -9,7 +9,13 @@ import {
 import pc from 'picocolors';
 import { spawn } from 'node:child_process';
 import { downloadExtract, getLatestTagName } from './utils.mjs';
-import pkg from '../package.json'
+import { readFileSync } from 'node:fs';
+
+
+const currentDirectory = new URL(import.meta.url).pathname.split('/').slice(0,-1).join('/');
+const pkg = readFileSync(currentDirectory+'/../package.json')
+const json = JSON.parse(pkg)
+
 
 console.log(`
  _  _  ____  _  _  ____  ____  _____  ___ 
@@ -17,7 +23,7 @@ console.log(`
  )  (  )__)  )  (   )(   )(_) ))(_)(( (__ 
 (_)\\_)(____)(_/\\_) (__) (____/(_____)\\___)
 
-v ${pkg.version}
+v${json.version}
 `)
 
 intro(pc.bgCyan(pc.bold(` Create NextDoc `)));
