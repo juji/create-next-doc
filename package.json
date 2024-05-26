@@ -6,7 +6,8 @@
     "create-next-doc": "bin/install.mjs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "release-it"
   },
   "repository": {
     "type": "git",
@@ -27,5 +28,8 @@
     "@clack/prompts": "^0.7.0",
     "picocolors": "^1.0.1",
     "tar": "^7.1.0"
+  },
+  "devDependencies": {
+    "release-it": "^17.3.0"
   }
 }
