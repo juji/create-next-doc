@@ -66,7 +66,7 @@ const tagname = await getLatestTagName(
 
 await downloadExtract(
   `https://github.com/juji/next-doc/archive/refs/tags/${tagname}.tar.gz`,
-  `next-doc-${tagname}`,
+  `next-doc-${tagname.replace(/^v/,'')}`,
   dir
 )
 
